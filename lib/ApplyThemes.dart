@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'DownloadAsset.dart';
 import 'ThemeEntity.dart';
 
 class ApplyThemes extends StatefulWidget {
@@ -175,9 +176,13 @@ class ApplyThemeState extends State<ApplyThemes> {
 
   Widget buttonOne(String backgroundColor) {
     return RaisedButton(
-      child: Text('Login'),
+      child: Text('Download Assets'),
       color: backgroundColorConvert(backgroundColor),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => DownloadAsset(title: 'Download Assets'),
+        ));
+      },
     );
   }
 
