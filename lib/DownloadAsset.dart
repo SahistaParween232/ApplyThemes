@@ -38,11 +38,8 @@ class _DownloadAssetState extends State<DownloadAsset> {
               height: 150,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: isExists(File(
-                          "${DownloadAssetsController.assetsDir}/dart.jpeg"))
-                      ? FileImage(File(
-                          "${DownloadAssetsController.assetsDir}/dart.jpeg"))
-                      : FileImage(File("")),
+                  image: FileImage(
+                      File("${DownloadAssetsController.assetsDir}/dart.jpeg")),
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -53,11 +50,8 @@ class _DownloadAssetState extends State<DownloadAsset> {
               height: 150,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: isExists(File(
-                          "${DownloadAssetsController.assetsDir}/flutter.png"))
-                      ? FileImage(File(
-                          "${DownloadAssetsController.assetsDir}/flutter.png"))
-                      : FileImage(File("")),
+                  image: FileImage(File(
+                      "${DownloadAssetsController.assetsDir}/flutter.png")),
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -135,7 +129,7 @@ class _DownloadAssetState extends State<DownloadAsset> {
   }
 
   bool isExists(File file) {
-    bool fileExists=false;
+    bool fileExists = false;
     file.exists().then((value) => fileExists = value);
     return fileExists;
   }
