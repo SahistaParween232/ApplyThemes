@@ -19,6 +19,7 @@ class _DownloadAssetState extends State<DownloadAsset> {
   void initState() {
     super.initState();
     DownloadAssetsController.init();
+    _downloadAssets();
   }
 
   @override
@@ -64,7 +65,7 @@ class _DownloadAssetState extends State<DownloadAsset> {
         children: <Widget>[
           FloatingActionButton(
             heroTag: 'Btn1',
-            onPressed: _downloadAssets,
+            onPressed: (){},//_downloadAssets,
             tooltip: 'Increment',
             child: Icon(Icons.arrow_downward),
           ),

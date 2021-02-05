@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'DownloadAsset.dart';
+import 'DownloadTextFileWeb.dart';
 import 'ThemeEntity.dart';
 
 class ApplyThemes extends StatefulWidget {
@@ -86,6 +87,10 @@ class ApplyThemeState extends State<ApplyThemes> {
                           height: 15,
                         ),
                         buttonOne(themeEntity.backgroundColor),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        buttonTwo(themeEntity.backgroundColor),
                       ],
                     )
                   ],
@@ -181,6 +186,18 @@ class ApplyThemeState extends State<ApplyThemes> {
       onPressed: () {
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => DownloadAsset(title: 'Download Assets'),
+        ));
+      },
+    );
+  }
+
+  Widget buttonTwo(String backgroundColor) {
+    return RaisedButton(
+      child: Text('Download for Web'),
+      color: backgroundColorConvert(backgroundColor),
+      onPressed: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => DownloadTextFileWeb(),
         ));
       },
     );
