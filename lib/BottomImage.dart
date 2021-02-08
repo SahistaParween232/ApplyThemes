@@ -6,6 +6,7 @@ class BottomImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ImageIcon(AssetImage(imgPath));
+    return Image(image:AssetImage(imgPath),
+    width: 80,);
   }
 }

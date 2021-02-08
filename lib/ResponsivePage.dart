@@ -1,6 +1,8 @@
 import 'package:applythemes/adaptive.dart';
 import 'package:flutter/material.dart';
 
+import 'Theme_Dark_Light.dart';
+
 class ResponsivePage extends StatelessWidget {
   final Widget widget;
 
@@ -12,10 +14,11 @@ class ResponsivePage extends StatelessWidget {
   }
 
   Widget _responsiveWidget(context) {
-    return Scaffold(
+    return SafeArea(
+        child: Scaffold(
       appBar: _appBar(context),
       body: _responsiveBodyWidget(context),
-    );
+    ));
   }
 
   Widget _responsiveBodyWidget(context) {
@@ -31,16 +34,17 @@ class ResponsivePage extends StatelessWidget {
   }
 
   Widget _appBar(context) {
-    return isDisplayDesktop(context) == true
+    return isDisplayDesktop(context) || isDisplaySmallDesktop(context)
         ? AppBar(
-            title: Text(
-              'VAMS 3.1',
-              style: TextStyle(color: Colors.cyan),
+            title: Image.asset(
+              'assets/images/vams_logo.png',
+              width: 80,
+              height: 50,
             ),
             backgroundColor: Colors.white,
             bottom: PreferredSize(
               child: Container(
-                color: Colors.cyan,
+                color: hexToColorConvert('#04B4A5'),
                 height: 4,
               ),
               preferredSize: Size.fromHeight(4.0),

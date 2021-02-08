@@ -54,10 +54,10 @@ ThemeData buildLightTheme() {
   );
 }
 
-Color hexToColorConvert(String backgroundColor) {
+Color hexToColorConvert(String color) {
   try {
-    return new Color(
-        int.parse(backgroundColor.substring(1, 7), radix: 16) + 0xFF000000);
+    return Color(
+        int.parse(color.substring(1, 7), radix: 16) + 0xFF000000);
   } catch (e) {
     return Color(0xFFCCCCCC).withOpacity(1);
   }

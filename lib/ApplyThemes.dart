@@ -196,9 +196,9 @@ class ApplyThemeState extends State<ApplyThemes> {
       child: Text('Download for Web'),
       color: backgroundColorConvert(backgroundColor),
       onPressed: () {
-        Navigator.of(context).push(MaterialPageRoute(
+       /* Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => DownloadTextFileWeb(),
-        ));
+        ));*/
       },
     );
   }

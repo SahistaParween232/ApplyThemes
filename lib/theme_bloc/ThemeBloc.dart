@@ -8,10 +8,6 @@ class ThemeBloc extends Object {
   //todo comes through our stream controller so using below class BehaviorSubject.
   final _themeContrler = BehaviorSubject<ThemeData>();
 
-  /*ThemeBloc() {
-    _themeContrler.stream.transform(validateTheme).pipe(_themeContrler);
-  }*/
-
   Stream<ThemeData> get themeData =>
       _themeContrler.stream.transform(validateTheme);
 
